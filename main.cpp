@@ -32,6 +32,9 @@ void setup(){
     arch_del.close();arch_ins.close();arch_sub.close();arch_trans.close();
 }
 
+// Recibe los titulos de los archivos que contienen los strings (S1.txt, S2.txt) y recibe un título para ponerle al csv que genera
+// Itera sobre los largos pasandole como indice final cada valor de largo en cada una de las iteraciones
+// Ejecuta los códigos de bruteforce y bruteforce optimizado tomando los tiempos y los escribe en un csv de nombre "titulo"
 void analizar_bf(string S1_txt, string S2_txt, string titulo){
 
   ifstream S1(S1_txt), S2(S2_txt);
@@ -74,6 +77,9 @@ void analizar_bf(string S1_txt, string S2_txt, string titulo){
   resultados.close();
 }
 
+// Recibe los titulos de los archivos que contienen los strings (S1.txt, S2.txt) y recibe un título para ponerle al csv que genera
+// Itera sobre los largos pasandole como indice final cada valor de largo en cada una de las iteraciones pero lo hace en pasos de potencias de 10 para disminuir la cantidad de casos que debe computar
+// Ejecuta los códigos de bruteforce y bruteforce optimizado tomando los tiempos y los escribe en un csv de nombre "titulo"
 void analizar_dp(string S1_txt, string S2_txt, string titulo){
    
   ifstream S1(S1_txt), S2(S2_txt);
@@ -102,6 +108,10 @@ void analizar_dp(string S1_txt, string S2_txt, string titulo){
   resultados.close();
 }
 
+
+// Recibe los titulos de los archivos que contienen los strings (S1.txt, S2.txt) y recibe un título para ponerle al csv que genera
+// Itera sobre los largos pasandole como indice final cada valor de largo en cada una de las iteraciones. Como el anterior lo hacía en pasos de potencias, se salta los casos pequeños. Esta función arregla eso y calclula los casos pequeños de uno en uno hasta 15
+// Ejecuta los códigos de bruteforce y bruteforce optimizado tomando los tiempos y los escribe en un csv de nombre "titulo"
 void analizar_dp_hasta_15(string S1_txt, string S2_txt, string titulo){
   ifstream S1(S1_txt), S2(S2_txt);
   S1 >> a; S2 >> b;
